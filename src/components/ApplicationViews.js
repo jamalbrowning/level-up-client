@@ -5,7 +5,7 @@ import { GameProvider } from "./game/GameProvider.js"
 import { EventList } from './game/EventList'
 import { EventProvider} from './game/EventProvider'
 import { GameForm } from './game/GameForm'
-
+import {EventForm } from './game/EventForm'
 
 
 export const ApplicationViews = () => {
@@ -24,6 +24,7 @@ export const ApplicationViews = () => {
                 <Route exact path="/events">
                     <EventList />
                 </Route>
+                <Route exact path="/events/new" render={props => <EventForm {...props} />} />
             </EventProvider>
         </main>
     </>
