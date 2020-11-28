@@ -12,6 +12,11 @@ export const EventList = (props) => {
         <article className="events">
             <header className="events__header">
                 <h1>Level Up Game Events</h1>
+                <button className="btn btn-2 btn-sep icon-create"
+                onClick={() => {
+                props.history.push({ pathname: "/events/new" })
+                }}
+                >Register New Event</button>
             </header>
             {
                 events.map(event => {
@@ -20,19 +25,18 @@ export const EventList = (props) => {
                         <div>{event.description}</div>
                         <div>
                             {
-                                new Date(date).toLocaleDateString("en-US",
-                                {
-                                    weekday: 'long',
-                                    year: 'numeric',
-                                    month: 'long',
-                                    day: 'numeric'
-                                })
-                                @ {event.time}
-                            }
+                                new Date(event.date).toLocaleDateString("en-US",
+                                    {
+                                        weekday: 'long',
+                                        year: 'numeric',
+                                        month: 'long',
+                                        day: 'numeric'
+                                    })
+                            } @ {event.time}
                         </div>
                     </section>
                 })
             }
-        </article >
+        </article>
     )
 }
