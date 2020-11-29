@@ -43,9 +43,48 @@ export const GameForm = props => {
                 <div className="form-group">
                     <label htmlFor="title">Title: </label>
                     <input type="text" name="title" required autoFocus className="form-control"
-                        value={currentGame.title}
+                        defaultValue={currentGame.title}
                         onChange={handleControlledInputChange}
                     />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="maker">Maker: </label>
+                    <input type="text" name="maker" required autoFocus className="form-control"
+                        defaultValue={currentGame.maker}
+                        onChange={handleControlledInputChange}
+                    />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="numberOfPlayers">Number of Players: </label>
+                    <input type="text" name="numberOfPlayers" required autoFocus className="form-control"
+                        defaultValue={currentGame.numberOfPlayers}
+                        onChange={handleControlledInputChange}
+                    />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="skillLevel">Skill Level: </label>
+                    <input type="text" name="skillLevel" required autoFocus className="form-control"
+                        defaultValue={currentGame.skillLevel}
+                        onChange={handleControlledInputChange}
+                    />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="gametypeId">Game Type: </label>
+                    <select name="gameTypeId" onChange={handleControlledInputChange}>
+                      {
+                        gameTypes.map(gameType => {
+                          return <option value={gameType.id} key={gameType.id}>{gameType.label}</option>
+                        })
+                      }
+                    </select>
                 </div>
             </fieldset>
 
