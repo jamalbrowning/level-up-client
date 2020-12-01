@@ -27,9 +27,7 @@ export const GameProvider = (props) => {
             body: JSON.stringify(game)
          })
             .then(res => res.json())
-            .then(() => {
-                
-            })
+            .then(getGames)
     }
     
     const getGameTypes = () => {
