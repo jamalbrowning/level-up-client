@@ -14,7 +14,7 @@ export const GameList = (props) => {
                 onClick={() => {
                 props.history.push({ pathname: "/games/new" })
                 }}
-                >Register New Game</button>
+            >Register New Game</button>
             {
                 games.map(game => {
                     return <section key={`game--${game.id}`} className="game">
