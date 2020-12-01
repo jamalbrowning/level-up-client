@@ -21,9 +21,8 @@ export const ApplicationViews = () => {
             <Route exact path="/games/new" render={props => <GameForm {...props} />} />
             
             <EventProvider>
-                    <Route exact path="/events">
-                        <EventList />
-                    </Route>
+                    <Route exact path="/events" render={ props => <EventList {...props}/>} />
+                    
 
                     <Route exact path="/events/new" render={props => <EventForm {...props} />} />
                 </EventProvider>
